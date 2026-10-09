@@ -125,7 +125,7 @@ async function asesorarEnTexto(cambios) {
 btnSim.addEventListener("click", async () => {
   if (!fotoBase64) { note.textContent = "Primero toma o sube una foto."; return; }
   if (!color && !estilo) { note.textContent = "Elige un color o un corte."; return; }
-  if (GEMINI_API_KEY === "AQ.Ab8RN6Lcg0Lgid4nHAT5DKuX4QsnMQifCcvtHAvRAtzbLhypOg") {
+  if (!import.meta.env.VITE_GCP_API_KEY) {
     note.textContent = "Falta configurar la clave de Gemini en js/config.js.";
     return;
   }
